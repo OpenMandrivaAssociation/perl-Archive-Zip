@@ -1,7 +1,7 @@
 %define realname	Archive-Zip
 %define name		perl-%realname
-%define version		1.16
-%define release		1mdk
+%define version		1.18
+%define release		%mkrel 1
 
 Summary:	Provide an interface to ZIP archive files
 Name:		%{name}
@@ -13,6 +13,7 @@ Source0:	http://search.cpan.org/CPAN/authors/id/N/NE/NEDKONZ/%{realname}-%{versi
 Url:		http://search.cpan.org/dist/%{realname}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot/
 Buildrequires:	perl-devel zlib-devel perl-Compress-Zlib
+BuildRequires:  perl(File::Which)
 BuildArch:	noarch
 
 %description
@@ -25,6 +26,8 @@ A Perl module that provides an interface to ZIP archive files.
 CFLAGS="$RPM_OPT_FLAGS" %{__perl} Makefile.PL INSTALLDIRS=vendor
 
 %make
+
+%check
 %{__make} test
 
 %install
