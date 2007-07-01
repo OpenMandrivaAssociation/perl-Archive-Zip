@@ -40,7 +40,7 @@ A Perl module that provides an interface to ZIP archive files.
 
 %files
 %defattr(-,root,root)
-%doc README TODO Changes
+%doc README Changes LICENSE
 %doc examples
 %{_bindir}/crc32
 %{perl_vendorlib}/Archive
