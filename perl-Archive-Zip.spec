@@ -1,20 +1,22 @@
-%define realname	Archive-Zip
-%define name		perl-%realname
-%define version		1.18
+%define module      Archive-Zip
+%define name		perl-%{module}
+%define version		1.20
 %define release		%mkrel 1
 
-Summary:	Provide an interface to ZIP archive files
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
+Summary:	Provide an interface to ZIP archive files
 License:	GPL or Artistic
 Group:		Development/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/N/NE/NEDKONZ/%{realname}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{realname}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot/
-Buildrequires:	perl-devel zlib-devel perl-Compress-Zlib
+Source:		http://www.cpan.org/modules/by-module/Archive/%{module}-%{version}.tar.bz2
+Buildrequires:	perl-devel
+Buildrequires:	zlib-devel
+Buildrequires:	perl(Compress::Zlib)
 BuildRequires:  perl(File::Which)
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 A Perl module that provides an interface to ZIP archive files.
@@ -23,25 +25,24 @@ A Perl module that provides an interface to ZIP archive files.
 %setup -q -n %{realname}-%{version}
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" %{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%make
+%{__perl} Makefile.PL INSTALLDIRS=vendor 
+%make CFLAGS="%{optflags}"
 
 %check
 %{__make} test
 
 %install
-%{__rm} -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 %makeinstall_std
 
 %clean
-%{__rm} -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc README TODO Changes
 %doc examples
 %{_bindir}/crc32
-%{perl_vendorlib}/Archive/*
+%{perl_vendorlib}/Archive
 %{_mandir}/*/*
 
