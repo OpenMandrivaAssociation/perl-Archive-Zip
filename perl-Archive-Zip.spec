@@ -22,7 +22,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}
 A Perl module that provides an interface to ZIP archive files.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{module}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor 
