@@ -1,6 +1,6 @@
 %define module      Archive-Zip
 %define name		perl-%{module}
-%define version		1.20
+%define version		1.22
 %define release		%mkrel 1
 
 Name:		%{name}
