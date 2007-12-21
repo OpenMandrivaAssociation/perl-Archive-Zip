@@ -16,6 +16,7 @@ Buildrequires:	zlib-devel
 Buildrequires:	perl(Compress::Zlib)
 BuildRequires:  perl(File::Which)
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 A Perl module that provides an interface to ZIP archive files.
