@@ -1,28 +1,27 @@
-%define module      Archive-Zip
-%define name		perl-%{module}
-%define version		1.30
-%define release		%mkrel 1
+%define upstream_name    Archive-Zip
+%define upstream_version 1.30
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Provide an interface to ZIP archive files
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{realname}
-Source:		http://www.cpan.org/modules/by-module/Archive/%{module}-%{version}.tar.bz2
-Buildrequires:	perl-devel
+Source0:	http://www.cpan.org/modules/by-module/Archive/%{upstream_name}-%{upstream_version}.tar.bz2
+
 Buildrequires:	zlib-devel
 Buildrequires:	perl(Compress::Zlib)
 BuildRequires:  perl(File::Which)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 A Perl module that provides an interface to ZIP archive files.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor 
@@ -45,4 +44,3 @@ A Perl module that provides an interface to ZIP archive files.
 %{_bindir}/crc32
 %{perl_vendorlib}/Archive
 %{_mandir}/*/*
-
