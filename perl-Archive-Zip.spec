@@ -32,7 +32,7 @@ make test
 %makeinstall_std
 
 %files
-%doc README Changes LICENSE
+%doc  Changes 
 %doc examples
 %{_bindir}/crc32
 %{perl_vendorlib}/Archive
