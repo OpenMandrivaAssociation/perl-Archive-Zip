@@ -1,14 +1,14 @@
 %define upstream_name    Archive-Zip
-%define upstream_version 1.30
+%define upstream_version 1.34
 
 Summary:	Provide an interface to ZIP archive files
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	11
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Archive/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/Archive/Archive-Zip-%{upstream_version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-devel
 BuildRequires:	perl(Compress::Zlib)
@@ -37,4 +37,5 @@ make test
 %{_bindir}/crc32
 %{perl_vendorlib}/Archive
 %{_mandir}/man3/*
+
 
