@@ -1,2 +1,4 @@
+removed_sources:
+  Archive-Zip-1.30.tar.bz2: 99615b031369421c72a59099169da2f2430b333b
 sources:
-  "Archive-Zip-1.30.tar.bz2": 99615b031369421c72a59099169da2f2430b333b
+  Archive-Zip-1.34.tar.gz: b4ea7397b5334c459735a33fa1d382fa7fccafe6
