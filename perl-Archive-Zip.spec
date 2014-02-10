@@ -1,5 +1,5 @@
 %define upstream_name    Archive-Zip
-%define upstream_version 1.34
+%define upstream_version 1.37
 
 Summary:	Provide an interface to ZIP archive files
 Name:		perl-%{upstream_name}
@@ -37,5 +37,6 @@ make test
 %{_bindir}/crc32
 %{perl_vendorlib}/Archive
 %{_mandir}/man3/*
+
 
 
