@@ -1,10 +1,10 @@
 %define upstream_name    Archive-Zip
-%define upstream_version 1.39
+%define upstream_version 1.60
 
 Summary:	Provide an interface to ZIP archive files
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -14,6 +14,9 @@ BuildRequires:	perl-devel
 BuildRequires:	perl(Compress::Zlib)
 BuildRequires:	perl(File::Which)
 BuildRequires:	pkgconfig(zlib)
+# For tests only
+BuildRequires:	perl(SUPER)
+BuildRequires:	perl(Test::MockModule)
 
 %description
 A Perl module that provides an interface to ZIP archive files.
@@ -26,6 +29,7 @@ A Perl module that provides an interface to ZIP archive files.
 %make CFLAGS="%{optflags}"
 
 %check
+# Disabled because of Test-MockModule dependency
 make test
 
 %install
