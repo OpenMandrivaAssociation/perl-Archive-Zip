@@ -1,5 +1,5 @@
 %define upstream_name    Archive-Zip
-%define upstream_version 1.64
+%define upstream_version 1.68
 
 Summary:	Provide an interface to ZIP archive files
 Name:		perl-%{upstream_name}
