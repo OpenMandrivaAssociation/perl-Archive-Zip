@@ -1,5 +1,6 @@
 %define upstream_name    Archive-Zip
 %define upstream_version 1.68
+%bcond_with tests
 
 Summary:	Provide an interface to ZIP archive files
 Name:		perl-%{upstream_name}
@@ -29,9 +30,11 @@ A Perl module that provides an interface to ZIP archive files.
 %__perl Makefile.PL INSTALLDIRS=vendor 
 %make CFLAGS="%{optflags}"
 
+%if %{with tests}
 %check
 # Disabled because of Test-MockModule dependency
 make test
+%endif
 
 %install
 %makeinstall_std
