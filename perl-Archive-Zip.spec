@@ -5,7 +5,7 @@
 Summary:	Provide an interface to ZIP archive files
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Release:	2
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/Archive::Zip
