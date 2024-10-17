@@ -8,7 +8,7 @@ Version:	%perl_convert_version %{upstream_version}
 Release:	2
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://metacpan.org/pod/Archive::Zip
+Url:		https://metacpan.org/pod/Archive::Zip
 Source0:	http://www.cpan.org/modules/by-module/Archive/%{upstream_name}-%{upstream_version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
