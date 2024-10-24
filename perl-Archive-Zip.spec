@@ -1,15 +1,14 @@
 %define upstream_name    Archive-Zip
-%define upstream_version 1.68
 %bcond_with tests
 
 Summary:	Provide an interface to ZIP archive files
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	1.68
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Archive::Zip
-Source0:	http://www.cpan.org/modules/by-module/Archive/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Archive/%{upstream_name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
@@ -24,11 +23,11 @@ BuildRequires:	perl(Test::MockModule)
 A Perl module that provides an interface to ZIP archive files.
 
 %prep
-%setup -qn %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor 
-%make CFLAGS="%{optflags}"
+%make_build CFLAGS="%{optflags}"
 
 %if %{with tests}
 %check
@@ -37,7 +36,7 @@ make test
 %endif
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc  Changes 
