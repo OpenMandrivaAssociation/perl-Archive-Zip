@@ -10,6 +10,7 @@ Group:		Development/Perl
 Url:		https://metacpan.org/pod/Archive::Zip
 Source0:	http://www.cpan.org/modules/by-module/Archive/%{upstream_name}-%{version}.tar.gz
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 BuildRequires:	perl(Compress::Zlib)
